@@ -4,25 +4,22 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="b5d63e90a50c4678aa02847927ca6681" Name="Diagram1">
-        <EntityTypeShape EntityType="ProyectoFinalModel.Carrito" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProyectoFinalModel.Categoria" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProyectoFinalModel.Factura" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProyectoFinalModel.Imagen" Width="1.5" PointX="5.75" PointY="7" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProyectoFinalModel.ListaVenta" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProyectoFinalModel.Permiso" Width="1.5" PointX="5.25" PointY="14" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProyectoFinalModel.Producto" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProyectoFinalModel.Rol" Width="1.5" PointX="3" PointY="14" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProyectoFinalModel.Usuario" Width="1.5" PointX="0.75" PointY="10.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProyectoFinalModel.Venta" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
-        <AssociationConnector Association="ProyectoFinalModel.FK__Carrito__factura__60A75C0F" ManuallyRouted="false" />
-        <AssociationConnector Association="ProyectoFinalModel.FK__Carrito__product__619B8048" ManuallyRouted="false" />
-        <AssociationConnector Association="ProyectoFinalModel.FK__Producto__catego__5812160E" ManuallyRouted="false" />
-        <AssociationConnector Association="ProyectoFinalModel.FK__Factura__usuario__5DCAEF64" ManuallyRouted="false" />
-        <AssociationConnector Association="ProyectoFinalModel.FK__ListaVent__Produ__05D8E0BE" ManuallyRouted="false" />
-        <AssociationConnector Association="ProyectoFinalModel.FK__ListaVent__Venta__04E4BC85" ManuallyRouted="false" />
-        <AssociationConnector Association="ProyectoFinalModel.FK__Permiso__IdRol__76969D2E" ManuallyRouted="false" />
-        <AssociationConnector Association="ProyectoFinalModel.FK__Rol__idUsuario__797309D9" ManuallyRouted="false" />
+      <Diagram DiagramId="f6d65de6f1fd48b48964dbe39c9c1354" Name="Diagram1">
+        <EntityTypeShape EntityType="ProyectoFinalModel.Categoria" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoFinalModel.Factura" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoFinalModel.Imagen" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoFinalModel.ListaVenta" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoFinalModel.Permiso" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoFinalModel.Producto" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoFinalModel.Rol" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoFinalModel.Usuario" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoFinalModel.Venta" Width="1.5" PointX="3" PointY="11.125" IsExpanded="true" />
+        <AssociationConnector Association="ProyectoFinalModel.FK__Producto__catego__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoFinalModel.FK__Factura__usuario__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoFinalModel.FK__ListaVent__Produ__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoFinalModel.FK__ListaVent__Venta__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoFinalModel.FK__Permiso__IdRol__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoFinalModel.FK__Rol__idUsuario__4BAC3F29" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

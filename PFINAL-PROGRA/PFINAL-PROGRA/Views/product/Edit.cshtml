@@ -19,6 +19,8 @@
 
 {
     @Html.HiddenFor(model => model.IdProducto)
+
+
     <div>
         @Html.LabelFor(model => model.nombreProducto)
         @Html.TextBoxFor(model => model.nombreProducto)
@@ -27,6 +29,12 @@
         @Html.LabelFor(model => model.precio)
         @Html.TextBoxFor(model => model.precio)
     </div>
+
+    <div>
+        @Html.LabelFor(model => model.Foto)
+        @Html.TextBoxFor(model => model.Foto)
+    </div>
+
     <div>
         @Html.LabelFor(model => model.categoriaId)
         @Html.TextBoxFor(model => model.categoriaId)

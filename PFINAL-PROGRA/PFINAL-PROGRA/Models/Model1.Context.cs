@@ -25,7 +25,6 @@ namespace PFINAL_PROGRA.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Carrito> Carrito { get; set; }
         public virtual DbSet<Categoria> Categoria { get; set; }
         public virtual DbSet<Factura> Factura { get; set; }
         public virtual DbSet<Imagen> Imagen { get; set; }

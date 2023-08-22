@@ -17,7 +17,6 @@ namespace PFINAL_PROGRA.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Producto()
         {
-            this.Carrito = new HashSet<Carrito>();
             this.ListaVenta = new HashSet<ListaVenta>();
         }
     
@@ -28,8 +27,6 @@ namespace PFINAL_PROGRA.Models
         public Nullable<System.DateTime> FechaCreacion { get; set; }
         public string Foto { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Carrito> Carrito { get; set; }
         public virtual Categoria Categoria { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ListaVenta> ListaVenta { get; set; }

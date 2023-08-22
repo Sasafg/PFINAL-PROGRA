@@ -1,16 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="ProyectoFinalModelStoreContainer" CdmEntityContainer="ProyFinalEntities">
-    <EntitySetMapping Name="Carrito">
-      <EntityTypeMapping TypeName="ProyectoFinalModel.Carrito">
-        <MappingFragment StoreEntitySet="Carrito">
-          <ScalarProperty Name="IdCarrito" ColumnName="IdCarrito" />
-          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
-          <ScalarProperty Name="facturaId" ColumnName="facturaId" />
-          <ScalarProperty Name="productoId" ColumnName="productoId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Categoria">
       <EntityTypeMapping TypeName="ProyectoFinalModel.Categoria">
         <MappingFragment StoreEntitySet="Categoria">

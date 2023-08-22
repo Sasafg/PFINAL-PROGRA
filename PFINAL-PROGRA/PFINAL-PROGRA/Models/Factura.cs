@@ -14,19 +14,11 @@ namespace PFINAL_PROGRA.Models
     
     public partial class Factura
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Factura()
-        {
-            this.Carrito = new HashSet<Carrito>();
-        }
-    
         public int IdFactura { get; set; }
         public System.DateTime fecha { get; set; }
         public double total { get; set; }
         public Nullable<int> usuarioId { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Carrito> Carrito { get; set; }
         public virtual Usuario Usuario { get; set; }
     }
 }

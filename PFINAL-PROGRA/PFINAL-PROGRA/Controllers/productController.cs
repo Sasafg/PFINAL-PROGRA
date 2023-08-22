@@ -55,8 +55,8 @@ namespace PFINAL_PROGRA.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nombre,Precio,CategoriaId")] Producto product)
+        
+        public ActionResult Create(Producto product)
         {
             if (ModelState.IsValid)
             {
@@ -65,54 +65,42 @@ namespace PFINAL_PROGRA.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.IdCategoria = new SelectList(db.Categoria, "Id", "Nombre", product.categoriaId);
             return View(product);
         }
 
-
-
-
-
-
-
-
-
-
-
         // GET: Products/Edit/5
-        public ActionResult Edit(int? id)
+
+        public ActionResult Edit(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Producto product = db.Producto.Find(id);
-            if (product == null)
+            Producto prodcuto = db.Producto.Find(id);
+            if (prodcuto == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.CategoriaId = new SelectList(db.Categoria, "Id", "Nombre", product.categoriaId);
-            return View(product);
+
+            return View(prodcuto);
         }
 
-        // POST: Products/Edit/5
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
-        // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: prodcuto/Edit/5
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nombre,Precio,CategoriaId,Disponible")] Producto product)
+        public ActionResult Edit(Producto prodcuto)
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.Entry(product).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    db.Entry(prodcuto).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+
+                return View(prodcuto);
             }
-            ViewBag.CategoriaId = new SelectList(db.Categoria, "Id", "Nombre", product.categoriaId);
-            return View(product);
+            catch
+            {
+                return View();
+            }
         }
-
-
 
         // GET: Products/Delete/5
         public ActionResult Delete(int id)

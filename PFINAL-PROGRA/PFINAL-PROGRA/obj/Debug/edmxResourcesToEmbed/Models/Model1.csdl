@@ -1,23 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="ProyectoFinalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="Carrito">
-    <Key>
-      <PropertyRef Name="IdCarrito" />
-    </Key>
-    <Property Name="IdCarrito" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="cantidad" Type="Int32" Nullable="false" />
-    <Property Name="facturaId" Type="Int32" />
-    <Property Name="productoId" Type="Int32" />
-    <NavigationProperty Name="Factura" Relationship="Self.FK__Carrito__factura__60A75C0F" FromRole="Carrito" ToRole="Factura" />
-    <NavigationProperty Name="Producto" Relationship="Self.FK__Carrito__product__619B8048" FromRole="Carrito" ToRole="Producto" />
-  </EntityType>
   <EntityType Name="Categoria">
     <Key>
       <PropertyRef Name="IdCategoria" />
     </Key>
     <Property Name="IdCategoria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="nombreCategoria" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="Producto" Relationship="Self.FK__Producto__catego__5812160E" FromRole="Categoria" ToRole="Producto" />
+    <NavigationProperty Name="Producto" Relationship="Self.FK__Producto__catego__4AB81AF0" FromRole="Categoria" ToRole="Producto" />
   </EntityType>
   <EntityType Name="Factura">
     <Key>
@@ -27,8 +16,7 @@
     <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="total" Type="Double" Nullable="false" />
     <Property Name="usuarioId" Type="Int32" />
-    <NavigationProperty Name="Carrito" Relationship="Self.FK__Carrito__factura__60A75C0F" FromRole="Factura" ToRole="Carrito" />
-    <NavigationProperty Name="Usuario" Relationship="Self.FK__Factura__usuario__5DCAEF64" FromRole="Factura" ToRole="Usuario" />
+    <NavigationProperty Name="Usuario" Relationship="Self.FK__Factura__usuario__46E78A0C" FromRole="Factura" ToRole="Usuario" />
   </EntityType>
   <EntityType Name="Imagen">
     <Key>
@@ -47,8 +35,8 @@
     <Property Name="ProductoId" Type="Int32" />
     <Property Name="Cantidad" Type="Int32" />
     <Property Name="Total" Type="Double" />
-    <NavigationProperty Name="Producto" Relationship="Self.FK__ListaVent__Produ__05D8E0BE" FromRole="ListaVenta" ToRole="Producto" />
-    <NavigationProperty Name="Venta" Relationship="Self.FK__ListaVent__Venta__04E4BC85" FromRole="ListaVenta" ToRole="Venta" />
+    <NavigationProperty Name="Producto" Relationship="Self.FK__ListaVent__Produ__47DBAE45" FromRole="ListaVenta" ToRole="Producto" />
+    <NavigationProperty Name="Venta" Relationship="Self.FK__ListaVent__Venta__48CFD27E" FromRole="ListaVenta" ToRole="Venta" />
   </EntityType>
   <EntityType Name="Permiso">
     <Key>
@@ -57,7 +45,7 @@
     <Property Name="idPermiso" Type="Int32" Nullable="false" />
     <Property Name="IdRol" Type="Int32" />
     <Property Name="activo" Type="Boolean" />
-    <NavigationProperty Name="Rol" Relationship="Self.FK__Permiso__IdRol__76969D2E" FromRole="Permiso" ToRole="Rol" />
+    <NavigationProperty Name="Rol" Relationship="Self.FK__Permiso__IdRol__49C3F6B7" FromRole="Permiso" ToRole="Rol" />
   </EntityType>
   <EntityType Name="Producto">
     <Key>
@@ -69,9 +57,8 @@
     <Property Name="categoriaId" Type="Int32" />
     <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
     <Property Name="Foto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Carrito" Relationship="Self.FK__Carrito__product__619B8048" FromRole="Producto" ToRole="Carrito" />
-    <NavigationProperty Name="Categoria" Relationship="Self.FK__Producto__catego__5812160E" FromRole="Producto" ToRole="Categoria" />
-    <NavigationProperty Name="ListaVenta" Relationship="Self.FK__ListaVent__Produ__05D8E0BE" FromRole="Producto" ToRole="ListaVenta" />
+    <NavigationProperty Name="Categoria" Relationship="Self.FK__Producto__catego__4AB81AF0" FromRole="Producto" ToRole="Categoria" />
+    <NavigationProperty Name="ListaVenta" Relationship="Self.FK__ListaVent__Produ__47DBAE45" FromRole="Producto" ToRole="ListaVenta" />
   </EntityType>
   <EntityType Name="Rol">
     <Key>
@@ -80,8 +67,8 @@
     <Property Name="idRol" Type="Int32" Nullable="false" />
     <Property Name="idUsuario" Type="Int32" />
     <Property Name="nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="Permiso" Relationship="Self.FK__Permiso__IdRol__76969D2E" FromRole="Rol" ToRole="Permiso" />
-    <NavigationProperty Name="Usuario" Relationship="Self.FK__Rol__idUsuario__797309D9" FromRole="Rol" ToRole="Usuario" />
+    <NavigationProperty Name="Permiso" Relationship="Self.FK__Permiso__IdRol__49C3F6B7" FromRole="Rol" ToRole="Permiso" />
+    <NavigationProperty Name="Usuario" Relationship="Self.FK__Rol__idUsuario__4BAC3F29" FromRole="Rol" ToRole="Usuario" />
   </EntityType>
   <EntityType Name="Usuario">
     <Key>
@@ -91,8 +78,8 @@
     <Property Name="nombreUsuario" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="correo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="contrasena" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="Factura" Relationship="Self.FK__Factura__usuario__5DCAEF64" FromRole="Usuario" ToRole="Factura" />
-    <NavigationProperty Name="Rol" Relationship="Self.FK__Rol__idUsuario__797309D9" FromRole="Usuario" ToRole="Rol" />
+    <NavigationProperty Name="Factura" Relationship="Self.FK__Factura__usuario__46E78A0C" FromRole="Usuario" ToRole="Factura" />
+    <NavigationProperty Name="Rol" Relationship="Self.FK__Rol__idUsuario__4BAC3F29" FromRole="Usuario" ToRole="Rol" />
   </EntityType>
   <EntityType Name="Venta">
     <Key>
@@ -103,33 +90,9 @@
     <Property Name="Subtotal" Type="Double" />
     <Property Name="Iva" Type="Double" />
     <Property Name="Total" Type="Double" />
-    <NavigationProperty Name="ListaVenta" Relationship="Self.FK__ListaVent__Venta__04E4BC85" FromRole="Venta" ToRole="ListaVenta" />
+    <NavigationProperty Name="ListaVenta" Relationship="Self.FK__ListaVent__Venta__48CFD27E" FromRole="Venta" ToRole="ListaVenta" />
   </EntityType>
-  <Association Name="FK__Carrito__factura__60A75C0F">
-    <End Role="Factura" Type="Self.Factura" Multiplicity="0..1" />
-    <End Role="Carrito" Type="Self.Carrito" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Factura">
-        <PropertyRef Name="IdFactura" />
-      </Principal>
-      <Dependent Role="Carrito">
-        <PropertyRef Name="facturaId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__Carrito__product__619B8048">
-    <End Role="Producto" Type="Self.Producto" Multiplicity="0..1" />
-    <End Role="Carrito" Type="Self.Carrito" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Producto">
-        <PropertyRef Name="IdProducto" />
-      </Principal>
-      <Dependent Role="Carrito">
-        <PropertyRef Name="productoId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__Producto__catego__5812160E">
+  <Association Name="FK__Producto__catego__4AB81AF0">
     <End Role="Categoria" Type="Self.Categoria" Multiplicity="0..1" />
     <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
     <ReferentialConstraint>
@@ -141,7 +104,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Factura__usuario__5DCAEF64">
+  <Association Name="FK__Factura__usuario__46E78A0C">
     <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
     <End Role="Factura" Type="Self.Factura" Multiplicity="*" />
     <ReferentialConstraint>
@@ -153,7 +116,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__ListaVent__Produ__05D8E0BE">
+  <Association Name="FK__ListaVent__Produ__47DBAE45">
     <End Role="Producto" Type="Self.Producto" Multiplicity="0..1" />
     <End Role="ListaVenta" Type="Self.ListaVenta" Multiplicity="*" />
     <ReferentialConstraint>
@@ -165,7 +128,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__ListaVent__Venta__04E4BC85">
+  <Association Name="FK__ListaVent__Venta__48CFD27E">
     <End Role="Venta" Type="Self.Venta" Multiplicity="0..1" />
     <End Role="ListaVenta" Type="Self.ListaVenta" Multiplicity="*" />
     <ReferentialConstraint>
@@ -177,7 +140,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Permiso__IdRol__76969D2E">
+  <Association Name="FK__Permiso__IdRol__49C3F6B7">
     <End Role="Rol" Type="Self.Rol" Multiplicity="0..1" />
     <End Role="Permiso" Type="Self.Permiso" Multiplicity="*" />
     <ReferentialConstraint>
@@ -189,7 +152,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Rol__idUsuario__797309D9">
+  <Association Name="FK__Rol__idUsuario__4BAC3F29">
     <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
     <End Role="Rol" Type="Self.Rol" Multiplicity="*" />
     <ReferentialConstraint>
@@ -202,7 +165,6 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="ProyFinalEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Carrito" EntityType="Self.Carrito" />
     <EntitySet Name="Categoria" EntityType="Self.Categoria" />
     <EntitySet Name="Factura" EntityType="Self.Factura" />
     <EntitySet Name="Imagen" EntityType="Self.Imagen" />
@@ -212,35 +174,27 @@
     <EntitySet Name="Rol" EntityType="Self.Rol" />
     <EntitySet Name="Usuario" EntityType="Self.Usuario" />
     <EntitySet Name="Venta" EntityType="Self.Venta" />
-    <AssociationSet Name="FK__Carrito__factura__60A75C0F" Association="Self.FK__Carrito__factura__60A75C0F">
-      <End Role="Factura" EntitySet="Factura" />
-      <End Role="Carrito" EntitySet="Carrito" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Carrito__product__619B8048" Association="Self.FK__Carrito__product__619B8048">
-      <End Role="Producto" EntitySet="Producto" />
-      <End Role="Carrito" EntitySet="Carrito" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Producto__catego__5812160E" Association="Self.FK__Producto__catego__5812160E">
+    <AssociationSet Name="FK__Producto__catego__4AB81AF0" Association="Self.FK__Producto__catego__4AB81AF0">
       <End Role="Categoria" EntitySet="Categoria" />
       <End Role="Producto" EntitySet="Producto" />
     </AssociationSet>
-    <AssociationSet Name="FK__Factura__usuario__5DCAEF64" Association="Self.FK__Factura__usuario__5DCAEF64">
+    <AssociationSet Name="FK__Factura__usuario__46E78A0C" Association="Self.FK__Factura__usuario__46E78A0C">
       <End Role="Usuario" EntitySet="Usuario" />
       <End Role="Factura" EntitySet="Factura" />
     </AssociationSet>
-    <AssociationSet Name="FK__ListaVent__Produ__05D8E0BE" Association="Self.FK__ListaVent__Produ__05D8E0BE">
+    <AssociationSet Name="FK__ListaVent__Produ__47DBAE45" Association="Self.FK__ListaVent__Produ__47DBAE45">
       <End Role="Producto" EntitySet="Producto" />
       <End Role="ListaVenta" EntitySet="ListaVenta" />
     </AssociationSet>
-    <AssociationSet Name="FK__ListaVent__Venta__04E4BC85" Association="Self.FK__ListaVent__Venta__04E4BC85">
+    <AssociationSet Name="FK__ListaVent__Venta__48CFD27E" Association="Self.FK__ListaVent__Venta__48CFD27E">
       <End Role="Venta" EntitySet="Venta" />
       <End Role="ListaVenta" EntitySet="ListaVenta" />
     </AssociationSet>
-    <AssociationSet Name="FK__Permiso__IdRol__76969D2E" Association="Self.FK__Permiso__IdRol__76969D2E">
+    <AssociationSet Name="FK__Permiso__IdRol__49C3F6B7" Association="Self.FK__Permiso__IdRol__49C3F6B7">
       <End Role="Rol" EntitySet="Rol" />
       <End Role="Permiso" EntitySet="Permiso" />
     </AssociationSet>
-    <AssociationSet Name="FK__Rol__idUsuario__797309D9" Association="Self.FK__Rol__idUsuario__797309D9">
+    <AssociationSet Name="FK__Rol__idUsuario__4BAC3F29" Association="Self.FK__Rol__idUsuario__4BAC3F29">
       <End Role="Usuario" EntitySet="Usuario" />
       <End Role="Rol" EntitySet="Rol" />
     </AssociationSet>
