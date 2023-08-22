@@ -1,0 +1,50 @@
+﻿
+@using PFINAL_PROGRA.Models;
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+
+
+@model Producto
+
+<a href="">
+    <img src="~/Assets/img/Delete.png" class="img-fluid" alt="..."
+         style="height: 300px; width: 600px; justify-content:center; position:relative">
+</a>
+
+
+<div>
+
+    <h3>¿Estás seguro que deseas eliminar este producto?</h3>
+    <div>
+
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.nombreProducto)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.nombreProducto)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.IdProducto)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IdProducto)
+            </dd>
+
+        </dl>
+        @using (Html.BeginForm("Eliminar", "product", new { id = Model.IdProducto }, FormMethod.Post))
+        {
+            <input type="submit" value="Eliminar Producto" />
+        }
+    </div>
+</div>
+
+

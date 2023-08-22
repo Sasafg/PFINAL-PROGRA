@@ -1,0 +1,47 @@
+﻿
+
+@{
+    ViewBag.Title = "About";
+}
+
+@using PFINAL_PROGRA.Models
+
+<a href="">
+    <img src="~/Assets/img/FideFit (2).png" class="img-fluid" alt="..."
+         style="height: 300px; width: 600px; text-align:center">
+
+
+</a>
+
+<hr />
+
+@model List<Producto> 
+
+<div class="container" style="align-self:center; height:auto; width:auto">
+    <div class="row">
+        @foreach (var product in Model)
+        {
+            <div class="col-md-3" style="margin:10px; justify-items:center">
+                <div class="card" style="justify-content:center">
+                    <img src="@product.Foto" class="card-img-top" alt="Product Image">
+                    <div class="card-body">
+                        <h5 class="card-title">@product.nombreProducto</h5>
+
+                        <p class="card-text">₡@product.precio</p>
+                    </div>
+
+                    @if (User.Identity.IsAuthenticated) {
+                <button type="button" class="btn btn-outline-secondary" style="margin:5px">
+                    <svg xmlns="http://www.w3.org/2000/svg" position="left" width="40" height="18" fill="currentColor" class="bi bi-cart-dash" viewBox="0 0 16 16">
+                        <path d="M6.5 7a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4z" />
+                        <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                    </svg>Agregar a Carrito
+                </button>
+                         }
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+

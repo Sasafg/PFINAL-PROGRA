@@ -1,0 +1,41 @@
+﻿
+@using PFINAL_PROGRA.Models;
+
+
+
+@model Producto
+
+<a href="">
+    <img src="~/Assets/img/Create.png" class="img-fluid" alt="..."
+         style="height: 300px; width: 600px; justify-content:center; position:relative">
+</a>
+<hr />
+
+
+@using (Html.BeginForm())
+{
+    <div>
+
+
+        <ul>  @Html.LabelFor(model => model.IdProducto)    </ul>
+
+        <ul>   @Html.TextBoxFor(model => model.IdProducto)    </ul>
+
+
+        <ul>   @Html.LabelFor(model => model.nombreProducto)    </ul>
+
+        <ul>  @Html.TextBoxFor(model => model.nombreProducto)    </ul>
+
+        <ul> @Html.LabelFor(model => model.precio)    </ul>
+        <ul>  @Html.TextBoxFor(model => model.precio) </ul>
+
+        <ul> @Html.LabelFor(model => model.Foto)    </ul>
+        <ul>  @Html.TextBoxFor(model => model.Foto) </ul>
+
+
+    </div>
+
+
+
+    <input type="submit" value="Create" />
+}

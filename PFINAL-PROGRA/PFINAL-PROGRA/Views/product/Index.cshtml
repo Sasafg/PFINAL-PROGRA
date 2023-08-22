@@ -1,0 +1,45 @@
+﻿@using PFINAL_PROGRA.Models
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@model List<Producto>
+
+
+<a href="">
+    <img src="~/Assets/img/index.png" class="img-fluid" alt="..."
+         style="height: 300px; width: 600px; justify-content:center; position:relative">
+</a>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<hr />
+
+
+
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Actions</th>
+    </tr>
+    @foreach (var product in Model)
+    {
+        <tr>
+            <td>@product.IdProducto</td>
+            <td>@product.nombreProducto</td>
+            <td>@product.precio</td>
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = product.IdProducto })
+                @Html.ActionLink("Details", "Details", new { id = product.IdProducto })
+                @Html.ActionLink("Delete", "Delete", new { id = product.IdProducto })
+                @Html.ActionLink("Images", "ProductImages", new { id = product.IdProducto })
+            </td>
+        </tr>
+    }
+</table>
