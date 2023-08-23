@@ -363,11 +363,12 @@
     <Content Include="Views\product\Edit.cshtml" />
     <Content Include="Views\Carrito\AgregarCarrito.cshtml" />
     <Content Include="Views\Carrito\FinalizarCompra.cshtml" />
+    <Content Include="Views\Venta\Index.cshtml" />
+    <Content Include="Views\Venta\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Def\" />
-    <Folder Include="Views\Venta\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

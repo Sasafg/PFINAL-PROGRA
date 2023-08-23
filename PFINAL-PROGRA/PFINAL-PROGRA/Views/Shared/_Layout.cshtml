@@ -42,27 +42,32 @@
 
                         @Html.ActionLink("Administrador", "Index", "product", new { area = "" }, new { @class = "nav-link" })
                     </li>
-                     }
+
                     <li class="nav-item">
-                        <a href="@Url.Action("Carrito", "AgregarCarrito","Carrito")">
-                            <i class="fas fa-shopping-cart"></i>
-                            <span class="carrito-cantidad">@ViewBag.CantidadEnCarrito</span>
-                        </a>
 
-
+                        @Html.ActionLink("Ventas", "Index", "Venta", new { area = "" }, new { @class = "nav-link" })
                     </li>
+                }
+                <li class="nav-item">
+                    <a href="@Url.Action("Carrito", "AgregarCarrito","Carrito")">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="carrito-cantidad">@ViewBag.CantidadEnCarrito</span>
+                    </a>
+
+
+                </li>
 
 
 
-                </ul>
+            </ul>
 
 
-               
+
 
 
 
             <ul class="nav-item " style="font-size:20px; font-weight:600; text-align:left; justify-content:center;">
-              
+
                 @Html.Partial("_LoginPartial")
             </ul>
         </div>

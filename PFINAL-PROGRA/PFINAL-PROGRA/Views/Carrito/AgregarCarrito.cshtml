@@ -20,16 +20,17 @@
         @{double total = 0; }
         @if (Session["Carrito"] != null)
         {
-            foreach (var item in Session["Carrito"] as List<PFINAL_PROGRA.Models.Carrito>)
+            foreach (var item in Session["Carrito"] as List<PFINAL_PROGRA.Models.cCarrito>)
             {
-                total += (double)(item.cantidad * item.Producto.precio);
+                total += (double)(item._cantidad * item._producto.precio);
                 <tr>
-                    <td>@item.Producto.IdProducto</td>
-                    <td>@item.Producto.nombreProducto</td>
-                    <td>@String.Format("{0:C}", item.Producto.precio)</td>
-                    <td>@item.cantidad</td>
-                    <td>@String.Format("{0:C}", item.cantidad * item.Producto.precio)</td>
-                    <td>@Html.ActionLink("Eliminar", "Delete", "Carrito", new { Id = item.Producto.IdProducto }, null)</td>
+                    <td>@item._producto.IdProducto</td>
+                    <td>@item._producto.nombreProducto</td>
+                    <td>@String.Format("{0:C}", item._producto.precio)</td>
+                    <td>@item._cantidad</td>
+                    <td>@String.Format("{0:C}", item._cantidad * item._producto.precio)</td>
+
+                    <td>@Html.ActionLink("Eliminar", "Delete", "Carrito", new { Id = item._producto.IdProducto }, null)</td>
 
                 </tr>
             }
@@ -43,6 +44,6 @@
     </tfoot>
 </table>
 
-@Html.ActionLink("Agregar mas productos", "Index", "Producto", null, null)|
+@Html.ActionLink("Agregar mas productos", "About", "Home", null, null)|
 @Html.ActionLink("Proceder a pagar", "FinalizaCompra", "Carrito", null, null);
 

@@ -9,16 +9,18 @@ namespace PFINAL_PROGRA.Controllers
 {
     public class VentaController : Controller
     {
-        private ProyFinalEntities db = new ProyFinalEntities();
+
+        private ProyFinalEntities bd = new ProyFinalEntities();
+        // GET: Venta
+
         public ActionResult Index()
         {
-            return View(db.Venta.ToList().OrderBy(x => x.DiaVenta));
+            return View(bd.Venta.ToList().OrderBy(x => x.DiaVenta));
         }
-
 
         public ActionResult Detail(int id)
         {
-            return View(db.Venta.Find(id));
+            return View(bd.Venta.Find(id));
 
         }
     }
