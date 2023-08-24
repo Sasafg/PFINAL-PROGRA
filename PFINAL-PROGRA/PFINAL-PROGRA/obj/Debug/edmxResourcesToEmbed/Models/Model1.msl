@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="ProyectoFinalModelStoreContainer" CdmEntityContainer="ProyFinalEntities">
+  <EntityContainerMapping StorageEntityContainer="ProyectoFinalModelStoreContainer" CdmEntityContainer="ProycFinalEntities">
     <EntitySetMapping Name="Categoria">
       <EntityTypeMapping TypeName="ProyectoFinalModel.Categoria">
         <MappingFragment StoreEntitySet="Categoria">
@@ -76,6 +76,7 @@
           <ScalarProperty Name="nombreUsuario" ColumnName="nombreUsuario" />
           <ScalarProperty Name="correo" ColumnName="correo" />
           <ScalarProperty Name="contrasena" ColumnName="contrasena" />
+          <ScalarProperty Name="Rol" ColumnName="Rol" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

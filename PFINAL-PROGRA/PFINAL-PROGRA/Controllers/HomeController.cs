@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.WebControls.WebParts;
 using PFINAL_PROGRA.Models;
+
 
 namespace PFINAL_PROGRA.Controllers
 {
@@ -14,20 +17,21 @@ namespace PFINAL_PROGRA.Controllers
             return View();
         }
 
+
         public ActionResult About()
         {
 
-            
-                using (var db = new ProyFinalEntities()) 
-                {
-                    List<Producto> products = db.Producto.ToList();  
-                    return View(products);                 
+
+            using (var db = new ProycFinalEntities())
+            {
+                List<Producto> productos = db.Producto.ToList();
+                return View(productos);
+
+                //List<Producto> products = db.Producto.ToList();
+                //return View(products);
+
             }
-            }
-
-
-
-        
+        }
 
         public ActionResult Contact()
         {

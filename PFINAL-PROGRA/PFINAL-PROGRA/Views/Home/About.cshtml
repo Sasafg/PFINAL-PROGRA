@@ -1,9 +1,5 @@
 ﻿
 
-@{
-    ViewBag.Title = "About";
-}
-
 @using PFINAL_PROGRA.Models
 
 <a href="">
@@ -17,11 +13,11 @@
 
 @model List<Producto> 
 
-<div class="container" style="align-self:center; height:auto; width:auto">
+<div class="container" style="justify-items:center; height:auto; width:auto">
     <div class="row">
         @foreach (var product in Model)
         {
-            <div class="col-md-3" style="margin:10px; justify-items:center">
+            <div class="col-md-3" style="margin:10px">
                 <div class="card" style="justify-content:center">
                     <img src="@product.Foto" class="card-img-top" alt="Product Image">
                     <div class="card-body">

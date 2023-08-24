@@ -10,7 +10,7 @@ namespace PFINAL_PROGRA.Controllers
     public class VentaController : Controller
     {
 
-        private ProyFinalEntities bd = new ProyFinalEntities();
+        private ProycFinalEntities bd = new ProycFinalEntities();
         // GET: Venta
 
         public ActionResult Index()

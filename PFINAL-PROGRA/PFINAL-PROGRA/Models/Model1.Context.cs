@@ -13,10 +13,10 @@ namespace PFINAL_PROGRA.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ProyFinalEntities : DbContext
+    public partial class ProycFinalEntities : DbContext
     {
-        public ProyFinalEntities()
-            : base("name=ProyFinalEntities")
+        public ProycFinalEntities()
+            : base("name=ProycFinalEntities")
         {
         }
     

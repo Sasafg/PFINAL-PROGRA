@@ -10,7 +10,7 @@ namespace PFINAL_PROGRA.Controllers
     public class CarritoController : Controller
     {
         // GET: Carrito
-        private ProyFinalEntities db = new ProyFinalEntities();
+        private ProycFinalEntities db = new ProycFinalEntities();
         [Authorize]
         public ActionResult AgregarCarrito(int id)
 

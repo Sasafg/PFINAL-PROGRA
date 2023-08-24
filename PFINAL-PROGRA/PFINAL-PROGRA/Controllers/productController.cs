@@ -15,7 +15,7 @@ namespace PFINAL_PROGRA.Controllers
     public class ProductController : Controller
     {
        
-        private ProyFinalEntities db = new ProyFinalEntities();
+        private ProycFinalEntities db = new ProycFinalEntities();
 
 
 

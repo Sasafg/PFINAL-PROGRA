@@ -25,9 +25,18 @@ namespace PFINAL_PROGRA.Models
         {
         }
 
+        public DbSet<Usuario> Usuarios { get; set; } // Agrega esta línea
+     
+
         public static ApplicationDbContext Create()
         {
+
             return new ApplicationDbContext();
         }
     }
+
+
+
+
 }
+

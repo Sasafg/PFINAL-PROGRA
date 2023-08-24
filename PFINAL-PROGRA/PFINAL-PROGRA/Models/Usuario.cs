@@ -18,17 +18,18 @@ namespace PFINAL_PROGRA.Models
         public Usuario()
         {
             this.Factura = new HashSet<Factura>();
-            this.Rol = new HashSet<Rol>();
+            this.Rol1 = new HashSet<Rol>();
         }
     
         public int IdUsuario { get; set; }
         public string nombreUsuario { get; set; }
         public string correo { get; set; }
         public string contrasena { get; set; }
+        public string Rol { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Factura> Factura { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Rol> Rol { get; set; }
+        public virtual ICollection<Rol> Rol1 { get; set; }
     }
 }
