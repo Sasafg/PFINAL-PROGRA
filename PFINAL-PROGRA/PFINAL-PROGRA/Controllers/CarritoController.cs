@@ -1,6 +1,7 @@
 ﻿using PFINAL_PROGRA.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -54,14 +55,29 @@ namespace PFINAL_PROGRA.Controllers
                 return -1;
             }
 
+        // GET: Carrito/Delete/5
+        public ActionResult Delete(int id)
+        {
+            try
+            {
+                List<cCarrito> compras = (List<cCarrito>)Session["Carrito"];
+                compras.RemoveAt(getIndex(id));
 
-            // POST: Carrito/Delete/5
-            [HttpPost]
+                return View("AgregarCarrito");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        // POST: Carrito/Delete/5
+        [HttpPost]
             public ActionResult Delete(int id, FormCollection collection)
             {
                 try
                 {
-                    List<cCarrito> compras = (List<cCarrito>)Session["Carrito"];
+                List<cCarrito> compras = (List<cCarrito>)Session["Carrito"];
                     compras.RemoveAt(getIndex(id));
 
                     return View("AgregarCarrito");

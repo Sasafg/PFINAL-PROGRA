@@ -418,9 +418,9 @@
     <Content Include="Views\product\ProductImages.cshtml" />
     <Content Include="Views\product\Edit.cshtml" />
     <Content Include="Views\Carrito\AgregarCarrito.cshtml" />
-    <Content Include="Views\Carrito\FinalizarCompra.cshtml" />
     <Content Include="Views\Venta\Index.cshtml" />
     <Content Include="Views\Venta\Detail.cshtml" />
+    <Content Include="Views\Carrito\FinalizaCompra.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

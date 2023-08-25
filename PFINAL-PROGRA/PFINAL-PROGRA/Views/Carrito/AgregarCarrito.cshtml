@@ -31,7 +31,13 @@
                     <td>@String.Format("{0:C}", item._cantidad * item._producto.precio)</td>
 
                     <td>@Html.ActionLink("Eliminar", "Delete", "Carrito", new { Id = item._producto.IdProducto }, null)</td>
-
+                    @if (!string.IsNullOrEmpty(ViewBag.MensajeAlerta))
+                    {
+                        <script>
+                            var mensaje = '@ViewBag.MensajeAlerta';
+                             alert(mensaje);
+                        </script>
+                    }
                 </tr>
             }
         }
